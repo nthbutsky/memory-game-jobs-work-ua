@@ -1,0 +1,15 @@
+root {
+  --cyan: #00a1f1;
+  --magenta: #e42469;
+  --green: #74c241;
+  --yellow: #ff9500;
+
+  --main-font: Arial, Helvetica, sans-serif;
+  --ad-font: Proxima, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
