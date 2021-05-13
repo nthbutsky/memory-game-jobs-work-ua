@@ -1,15 +1,95 @@
-root {
+:root {
   --cyan: #00a1f1;
   --magenta: #e42469;
   --green: #74c241;
   --yellow: #ff9500;
+  --grey-dark: #2c3f52;
+  --grey-light: #f4f5f6;
 
   --main-font: Arial, Helvetica, sans-serif;
-  --ad-font: Proxima, sans-serif;
+  --motto-font: Proxima Nova, sans-serif;
 }
 
-* {
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  min-height: 100vh;
+}
+
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background: -webkit-linear-gradient(-72deg, #00b0f3 27%, #008cec 50%) #00a1f1;
+}
+
+.game-container {
+  width: 630px;
+  margin: auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.logo-header {
+  width: 150px;
+  height: 55px;
+}
+
+.page-title {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: var(--motto-font);
+  color: var(--magenta);
+}
+
+.page-info {
+  font-family: var(--main-font);
+}
+
+.game-info-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--main-font);
+  font-size: 20px;
+  padding-bottom: 5px;
+  color: var(--grey-dark);
+  font-weight: bold;
+}
+
+.game-info {
+  padding-top: 5px;
+  border-top: 5px solid var(--magenta);
+}
+
+.game-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 630px;
+  margin: auto;
+}
+
+.card {
+  background: var(--grey-light);
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.logo-card {
+  height: 75px;
+  width: 75px;
+  transition: transform 100ms ease-in-out;
+}
+
+.card:hover .logo-card {
+  transform: scale(1.8);
 }
