@@ -28,6 +28,10 @@ userInfoSubmitBtn.addEventListener("click", () => {
     {}
   );
   console.log(userInfo);
+  let element = document.getElementsByClassName("overlay-start-form-container");
+  for (let i = 0; i < element.length; i++) {
+    element[i].classList.remove("visible");
+  }
 });
 
 //fires final function to block the game and shows final time result
