@@ -114,7 +114,7 @@ function checkForMatch() {
   isMatch ? disableCards : unflipCards();
 
   if (isMatch) disabledCardsPairsCount++;
-  if (disabledCardsPairsCount === 1) endTimeOfGame();
+  if (disabledCardsPairsCount === 10) endTimeOfGame();
 }
 
 function disableCards() {
