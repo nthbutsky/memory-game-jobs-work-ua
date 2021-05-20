@@ -33,81 +33,102 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
   z-index: 100;
   color: var(--grey-dark);
   font-family: var(--motto-font);
-  font-size: 32px;
+  font-size: 24px;
   font-weight: bold;
 }
 
 .overlay-start-form-container.visible {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.9);
+  animation: overlay-grow 500ms forwards;
+  background: var(--white);
 }
 
-.overlay-start-form {
+/* @keyframes overlay-grow {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(255, 255, 255, 0.9);
+  }
+} */
+
+#overlay-start-form {
   display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 330px;
-  margin-top: 225px;
+  margin-top: 40px;
   background: var(--white);
   padding: 15px;
-  border-radius: 7px;
+  border-radius: 5px;
   border: 1px solid var(--grey);
+  max-width: 400px;
 }
 
-.input-container {
-  margin-top: 10px;
+.logo-login-page {
+  height: 30px;
+  margin-top: 50px;
 }
 
-.input-field {
-  padding: 10px;
-  margin: 15px 0 0 0;
+.welcome-text {
+  border-top: 10px solid var(--magenta);
+  color: var(--grey-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background: var(--white);
+  padding: 15px;
+  line-height: 1;
+}
+
+.user-input {
+  padding: 8px;
   font-family: var(--motto-font);
-  font-size: 14px;
-  border-radius: 7px;
+  font-size: 1rem;
+  border-radius: 5px;
   width: 100%;
-  background: var(--grey-light);
+  background: var(--white);
+  border: transparent;
+  margin-top: 20px;
   border: 1px solid var(--grey);
+  text-align: center;
 }
 
-.input-field:focus {
-  outline-color: var(--cyan);
+.user-input::placeholder {
+  color: var(--grey);
 }
 
-.input-error {
-  border: 2px solid var(--yellow);
+.user-input:focus {
+  border: 1px solid var(--cyan);
+  outline: none;
 }
-
-.input-success {
-  border: 2px solid var(--green);
-}
-
-/* .input-error {
-  position: absolute;
-  font-size: 10px;
-} */
 
 .submit-btn {
   padding: 10px;
-  margin-top: 30px;
   font-family: var(--motto-font);
-  font-size: 14px;
-  border-radius: 7px;
+  font-size: 1rem;
+  border-radius: 5px;
   width: 100%;
-  background: var(--magenta);
+  margin-top: 5px;
+  background: var(--cyan);
   color: var(--grey-light);
   border: transparent;
   cursor: pointer;
 }
 
 .submit-btn:hover {
-  background: #cf2160;
+  background: var(--cyan-dark);
 }
 
 .overlay-end-game-container {
@@ -120,26 +141,23 @@ body {
   justify-content: center;
   align-items: flex-start;
   z-index: 100;
-  color: var(--grey-dark);
+  background: -webkit-linear-gradient(-72deg, #00b0f3 27%, #008cec 50%) #00a1f1;
   padding-top: 410px;
 }
 
 .overlay-end-game-text {
   font-family: var(--motto-font);
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
-  color: var(--cyan);
-  background: var(--white);
+  color: var(--white);
   padding: 15px;
+  line-height: 1;
   border-top: 10px solid var(--magenta);
-  border-bottom: 1px solid var(--grey);
-  border-right: 1px solid var(--grey);
-  border-left: 1px solid var(--grey);
 }
 
 .overlay-end-game-container.visible {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--white);
 }
 
 .game-container {
@@ -171,12 +189,13 @@ body {
 }
 
 .game-info-container {
+  margin-top: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   font-family: var(--main-font);
   font-size: 20px;
   padding-bottom: 5px;
-  color: var(--grey-dark);
+  color: var(--white);
   font-weight: bold;
 }
 
@@ -245,4 +264,18 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 10px;
+}
+
+.home-link {
+  margin-top: 20px;
+  color: #0094df;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.41176471;
+  font-weight: normal;
+}
+
+.home-link:hover {
+  text-decoration: underline;
 }
