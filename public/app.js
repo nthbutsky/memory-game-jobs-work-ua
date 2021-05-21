@@ -156,7 +156,7 @@ function unflipCards() {
     secondCard.classList.remove("card-flip");
 
     resetCards();
-  }, 1000);
+  }, 500);
 }
 
 function resetCards() {
