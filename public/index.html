@@ -12,6 +12,7 @@
     <img class="logo-login-page" src="images/logo/logo-full-cyan.png" alt="">
     <div id="overlay-start-form">
       <div class="welcome-text" id="signed-in-text"> Будь ласка, авторизуйтеся, щоб почати гру!</div>
+      <span id="sms-sent-info"></span>
       <input 
         type="text" 
         class="user-input" 
@@ -38,12 +39,12 @@
     </div>
     <div class="overlay-end-game-container">
       <div class="overlay-end-game-text">
-        Ваш результат: 
+        Ваш результат 
         <span id="time-result"></span>
       </div>
     </div>
-    <div class="game-container">
-      <div class="header-container">
+    <div class="header-container">
+      <div class="header-container-box">
         <img
           class="logo-header"
           src="images/logo/logo-full-white.svg"
@@ -51,6 +52,12 @@
         />
         <h1 class="page-title">ТИ ЗМОЖЕШ ВСЕ</h1>
       </div>
+        
+        </div>
+
+        <div class="game-container">
+      
+        
       <div class="game-card-container">
         <div class="card" data-jobs="job-01">
           <div class="card-back">
@@ -373,15 +380,16 @@
           </div>
         </div>
       </div>
-      <div class="game-info-container">
+    </div>
+            <div class="game-info-container">
         <div class="game-info">
           <span id="time-main">00:00:00</span>
         </div>
       </div>
-    </div>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
-    <script src="index.js"></script>
+    <script src="firebase.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
