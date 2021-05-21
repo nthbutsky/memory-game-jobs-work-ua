@@ -1,90 +1,114 @@
-let userInfo = {};
-
-let userInfoSubmitBtn = document.getElementById("submit");
-
 const cards = document.querySelectorAll(".card");
-let resultTime = document.getElementById("time");
-let disabledCardsPairsCount = 0;
+const resultTime = document.getElementById("time-result");
+const gameStart = document.getElementById("overlay-start");
+const timeIndicator = document.getElementById("time-main");
 
+let disabledCardsPairsCount = 0;
 let flippedCard = false;
 let lockedCards = false;
-let firstCard, secondCard;
-
+let firstCard;
+let secondCard;
 let totalTimeOfGame;
-let sec = 0;
-let min = 0;
-let appendSec = document.getElementById("sec");
-let appendMin = document.getElementById("min");
+let timeCurrent = 0;
 let timerStart = false;
+let timerStartOnlyWhenFirstCardClicked = false;
+let startTime;
+let endTime;
 
-//trick to fire function only once during consecutive iterations
-let startedTimerOnlyOnce = false;
-
-let startTime, endTime;
-
-userInfoSubmitBtn.addEventListener("click", () => {
-  userInfo = Array.from(document.querySelectorAll("input")).reduce(
-    (acc, input) => ({ ...acc, [input.id]: input.value }),
-    {}
-  );
-  console.log(userInfo);
+function startGame() {
   let element = document.getElementsByClassName("overlay-start-form-container");
   for (let i = 0; i < element.length; i++) {
     element[i].classList.remove("visible");
   }
-});
+}
 
 //fires final function to block the game and shows final time result
 function endGame() {
   let element = document.getElementsByClassName("overlay-end-game-container");
   for (let i = 0; i < element.length; i++) {
     element[i].classList.add("visible");
+
+    const { serverTimestamp } = firebase.firestore.FieldValue;
+
+    db.collection("users-game-result")
+      .add({
+        phone: phoneNumberField.value,
+        userTimeResult: resultTime.innerText,
+        gameTimeEnd: serverTimestamp(),
+      })
+      .then((docRef) => {
+        console.log("user-game-result written with ID: ", docRef.id);
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
+
+    db.collection("users-login-list")
+      .add({
+        phone: phoneNumberField.value,
+        loginDone: serverTimestamp(),
+      })
+      .then((docRef) => {
+        console.log("users-login-list written with ID: ", docRef.id);
+      })
+      .catch((error) => {
+        console.error("Error adding user: ", error);
+      });
+
+    setTimeout(() => {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          console.log("Signed out successfully !");
+        })
+        .catch((error) => {
+          console.log("Error, not signed out !");
+        });
+    }, 2000);
   }
 }
+
 //stamp time of the game starting
-function startTimeOfGame() {
+function logTimeWhenGameStarts() {
   startTime = new Date();
   console.log(startTime);
 }
+
 //stamps time of the game ending, shows final time result in seconds
-function endTimeOfGame() {
+function logTimeWhenGameEnds() {
   endTime = new Date();
   let timeDiff = endTime - startTime;
   timeDiff /= 1000;
   let seconds = Math.round(timeDiff);
-  resultTime.innerHTML = seconds;
+  let date = new Date(0);
+  date.setSeconds(seconds);
+  let timeString = date.toISOString().substr(11, 8);
+  resultTime.innerHTML = timeString;
+  console.log(endTime);
 
   endGame();
-  stopCounter();
+  stopTimeCounter();
 }
 
-function stopCounter() {
+function stopTimeCounter() {
   clearInterval(totalTimeOfGame);
 }
 //creates timer and counts during the game showing in secs and mins
-function startCounter() {
+function startTimeCounter() {
   totalTimeOfGame = setInterval(() => {
-    sec++;
-    if (sec < 10) {
-      appendSec.innerHTML = "0" + sec;
-    }
-    if (sec > 9) {
-      appendSec.innerHTML = sec;
-    }
-    if (sec === 60) {
-      appendSec.innerHTML = "00";
-      min++;
-      sec = 0;
-    }
-    if (min < 10) {
-      appendMin.innerHTML = "0" + min;
-    }
+    timeCurrent++;
+    let date = new Date(0);
+    date.setSeconds(timeCurrent);
+    let timeString = date.toISOString().substr(11, 8);
+    timeIndicator.innerHTML = timeString;
   }, 1000);
-  startedTimerOnlyOnce = true;
+  timerStartOnlyWhenFirstCardClicked = true;
 }
 
 function startTimer() {
-  if (!startedTimerOnlyOnce) startCounter(), startTimeOfGame();
+  if (!timerStartOnlyWhenFirstCardClicked)
+    startTimeCounter(), logTimeWhenGameStarts();
 }
 
 function flipCard() {
@@ -114,7 +138,7 @@ function checkForMatch() {
   isMatch ? disableCards : unflipCards();
 
   if (isMatch) disabledCardsPairsCount++;
-  if (disabledCardsPairsCount === 10) endTimeOfGame();
+  if (disabledCardsPairsCount === 10) logTimeWhenGameEnds();
 }
 
 function disableCards() {

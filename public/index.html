@@ -5,84 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="#" />
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Memory Game Jobs Work.ua</title>
   </head>
-  <body>
-    <div class="overlay-start-form-container visible">
-      <div class="overlay-start-form">
-        БУДЬ ЛАСКА, ЗАРЕЄСТРУЙТЕСЯ, ЩОБ ПОЧАТИ ГРУ!
-        <form class="input-container" id="form">
-          <input
-            class="input-field"
-            id="firstname"
-            type="text"
-            placeholder="ІМ'Я"
-            required
-          />
-
-          <input
-            class="input-field"
-            id="lastname"
-            type="text"
-            placeholder="ПРІЗВИЩЕ"
-            required
-          />
-
-          <input
-            class="input-field"
-            id="e-mail"
-            type="e-mail"
-            placeholder="ЕЛЕКТРОННА ПОШТА"
-            required
-          />
-
-          <!-- <input
-            class="input-field input-error input-success"
-            id="password"
-            type="password"
-            placeholder="ПАРОЛЬ"
-            required
-          /> -->
-
-          <button class="submit-btn" id="submit" type="button">УВІЙТИ</button>
-        </form>
-      </div>
+  <div id="overlay-start" class="overlay-start-form-container visible">
+    <img class="logo-login-page" src="images/logo/logo-full-cyan.png" alt="">
+    <div id="overlay-start-form">
+      <div class="welcome-text" id="signed-in-text"> Будь ласка, авторизуйтеся, щоб почати гру!</div>
+      <span id="sms-sent-info"></span>
+      <input 
+        type="text" 
+        class="user-input" 
+        id="user-phone" 
+        placeholder="Номер телефону у форматі +38ХХХХХХХХХХ"/>
+      <button 
+        class="submit-btn" 
+        id="get-code" 
+        type="submit">Отримати пароль
+      </button>
+      <input 
+        type="text" 
+        class="user-input" 
+        id="user-code" 
+        placeholder="Пароль із смс"/>
+      <button 
+        class="submit-btn" 
+        id="submit"
+        type="submit">Увійти
+      </button>
+      <div id="recaptcha-container"></div>
+    </div>
+    </div>
     </div>
     <div class="overlay-end-game-container">
       <div class="overlay-end-game-text">
-        ВАШ ЧАС:
-        <span id="time"></span> СЕК
+        Ваш результат 
+        <span id="time-result"></span>
       </div>
     </div>
-    <div class="game-container">
-      <div class="header-container">
+    <div class="header-container">
+      <div class="header-container-box">
         <img
           class="logo-header"
-          src="./images/logo/logo-full-white.svg"
+          src="images/logo/logo-full-white.svg"
           alt="Work.ua Logo"
         />
         <h1 class="page-title">ТИ ЗМОЖЕШ ВСЕ</h1>
       </div>
-
-      <div class="game-info-container">
-        <div class="game-info">
-          ЧАС <span id="min">00</span>:<span id="sec">00</span>
+        
         </div>
-      </div>
+
+        <div class="game-container">
+      
+        
       <div class="game-card-container">
         <div class="card" data-jobs="job-01">
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src=" images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-01.png"
+              src="images/jobs/job-01.png"
               alt="Work.ua Job"
             />
           </div>
@@ -91,14 +79,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-01.png"
+              src="images/jobs/job-01.png"
               alt="Work.ua Job"
             />
           </div>
@@ -107,14 +95,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-02.png"
+              src="images/jobs/job-02.png"
               alt="Work.ua Job"
             />
           </div>
@@ -123,14 +111,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-02.png"
+              src="images/jobs/job-02.png"
               alt="Work.ua Job"
             />
           </div>
@@ -139,14 +127,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-03.png"
+              src="images/jobs/job-03.png"
               alt="Work.ua Job"
             />
           </div>
@@ -155,14 +143,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-03.png"
+              src="images/jobs/job-03.png"
               alt="Work.ua Job"
             />
           </div>
@@ -171,14 +159,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-04.png"
+              src="images/jobs/job-04.png"
               alt="Work.ua Job"
             />
           </div>
@@ -187,14 +175,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-04.png"
+              src="images/jobs/job-04.png"
               alt="Work.ua Job"
             />
           </div>
@@ -203,14 +191,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-05.png"
+              src="images/jobs/job-05.png"
               alt="Work.ua Job"
             />
           </div>
@@ -219,14 +207,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-05.png"
+              src="images/jobs/job-05.png"
               alt="Work.ua Job"
             />
           </div>
@@ -235,14 +223,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-06.png"
+              src="images/jobs/job-06.png"
               alt="Work.ua Job"
             />
           </div>
@@ -251,14 +239,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-06.png"
+              src="images/jobs/job-06.png"
               alt="Work.ua Job"
             />
           </div>
@@ -267,14 +255,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-07.png"
+              src="images/jobs/job-07.png"
               alt="Work.ua Job"
             />
           </div>
@@ -283,14 +271,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-07.png"
+              src="images/jobs/job-07.png"
               alt="Work.ua Job"
             />
           </div>
@@ -299,14 +287,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-08.png"
+              src="images/jobs/job-08.png"
               alt="Work.ua Job"
             />
           </div>
@@ -315,14 +303,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-08.png"
+              src="images/jobs/job-08.png"
               alt="Work.ua Job"
             />
           </div>
@@ -331,14 +319,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-09.png"
+              src="images/jobs/job-09.png"
               alt="Work.ua Job"
             />
           </div>
@@ -347,14 +335,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-09.png"
+              src="images/jobs/job-09.png"
               alt="Work.ua Job"
             />
           </div>
@@ -363,14 +351,14 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-10.png"
+              src="images/jobs/job-10.png"
               alt="Work.ua Job"
             />
           </div>
@@ -379,20 +367,29 @@
           <div class="card-back">
             <img
               class="card-logo"
-              src="./images/logo/logo.svg"
+              src="images/logo/logo.svg"
               alt="Work.ua Aim Logo"
             />
           </div>
           <div class="card-front">
             <img
               class="card-job"
-              src="./images/jobs/job-10.png"
+              src="images/jobs/job-10.png"
               alt="Work.ua Job"
             />
           </div>
         </div>
       </div>
     </div>
-    <script src="./scripts/app.js"></script>
+            <div class="game-info-container">
+        <div class="game-info">
+          <span id="time-main">00:00:00</span>
+        </div>
+      </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="firebase.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

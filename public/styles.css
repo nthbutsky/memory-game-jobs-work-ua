@@ -1,0 +1,408 @@
+:root {
+  --cyan: #00a1f1;
+  --cyan-dark: #0091d9;
+  --magenta: #e42469;
+  --magenta-dark: #cf2160;
+  --green: #74c241;
+  --yellow: #ff9500;
+  --grey: #d0d1d2;
+  --grey-dark: #2c3f52;
+  --grey-light: #f4f5f6;
+  --white: #fff;
+
+  --main-font: Arial, Helvetica, sans-serif;
+  --motto-font: Proxima Nova, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  min-height: 100vh;
+  background: var(--grey-light);
+  /* background: -webkit-linear-gradient(-72deg, #00b0f3 27%, #008cec 50%) #00a1f1; */
+}
+
+#loader {
+  position: absolute;
+  height: 100px;
+}
+
+#sms-sent-info {
+  font-size: 1rem;
+  color: var(--magenta);
+  margin-top: 10px;
+}
+
+.overlay-start-form-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  z-index: 100;
+  color: var(--grey-dark);
+  font-family: var(--motto-font);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.overlay-start-form-container.visible {
+  display: flex;
+  display: -webkit-flex;
+  animation: overlay-grow 500ms forwards;
+  background: var(--white);
+}
+
+#overlay-start-form {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  background: var(--grey-light);
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--grey);
+  max-width: 400px;
+}
+
+.logo-login-page {
+  height: 30px;
+  margin-top: 50px;
+}
+
+.welcome-text {
+  border-top: 10px solid var(--magenta);
+  color: var(--grey-dark);
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  padding: 15px;
+  line-height: 1;
+}
+
+.user-input {
+  padding: 8px;
+  font-family: var(--motto-font);
+  font-size: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  background: var(--white);
+  border: transparent;
+  margin-top: 20px;
+  border: 1px solid var(--grey);
+  text-align: center;
+}
+
+.user-input::placeholder {
+  color: var(--grey);
+}
+
+.user-input:focus {
+  border: 1px solid var(--cyan);
+  outline: none;
+}
+
+.submit-btn {
+  padding: 10px;
+  font-family: var(--motto-font);
+  font-size: 1rem;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 5px;
+  background: var(--cyan);
+  color: var(--grey-light);
+  border: transparent;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: var(--cyan-dark);
+}
+
+.overlay-end-game-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 100;
+  background: var(--white);
+  /* background: -webkit-linear-gradient(-72deg, #00b0f3 27%, #008cec 50%) #00a1f1; */
+}
+
+.overlay-end-game-text {
+  font-family: var(--motto-font);
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--cyan);
+  padding: 15px;
+  line-height: 1;
+  border-top: 10px solid var(--magenta);
+}
+
+.overlay-end-game-container.visible {
+  display: flex;
+  display: -webkit-flex;
+  background-color: var(--grey-light);
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-container {
+  max-width: 790px;
+  margin: auto;
+}
+
+.header-container {
+  width: 100%;
+  background: -webkit-linear-gradient(-72deg, #00b0f3 27%, #008cec 50%) #00a1f1;
+  justify-content: center;
+  padding: 50px 0 10px 0;
+  margin-bottom: 10px;
+}
+
+.header-container-box {
+  display: flex;
+  justify-content: space-between;
+  width: 790px;
+  margin: auto;
+}
+
+.logo-header {
+  width: 150px;
+  height: 55px;
+}
+
+.page-title {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: var(--motto-font);
+  color: var(--magenta);
+}
+
+.page-info {
+  font-family: var(--main-font);
+}
+
+.game-info-container {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  font-family: var(--main-font);
+  font-size: 20px;
+  padding-bottom: 5px;
+  color: var(--grey-dark);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.game-info {
+  padding: 10px;
+  border-top: 5px solid var(--magenta);
+}
+
+.game-card-container {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: auto;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -o-perspective: 1000px;
+  -ms-perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background: var(--white);
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: transform 100ms ease-in-out;
+  -webkit-transition: transform 100ms ease-in-out;
+  -moz-transition: transform 100ms ease-in-out;
+  -o-transition: transform 100ms ease-in-out;
+  -ms-transition: transform 100ms ease-in-out;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+}
+
+.card.card-flip {
+  transition: transform 500ms ease-in-out;
+  -webkit-transition: transform 500ms ease-in-out;
+  -moz-transition: transform 500ms ease-in-out;
+  -o-transition: transform 500ms ease-in-out;
+  -ms-transition: transform 500ms ease-in-out;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+  height: 150px;
+  width: 150px;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+}
+
+.card-logo {
+  height: 75px;
+  width: 75px;
+  transition: transform 250ms ease-in-out;
+  -webkit-transition: transform 250ms ease-in-out;
+  -moz-transition: transform 250ms ease-in-out;
+  -o-transition: transform 250ms ease-in-out;
+  -ms-transition: transform 250ms ease-in-out;
+}
+
+.card:hover .card-logo {
+  transform: scale(1.8);
+  -webkit-transform: scale(1.8);
+  -moz-transform: scale(1.8);
+  -o-transform: scale(1.8);
+  -ms-transform: scale(1.8);
+}
+
+.card-back.card-logo-flip {
+  display: none;
+  -webkit-display: none;
+}
+
+.card-job {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.home-link {
+  margin-top: 20px;
+  color: #0094df;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.41176471;
+  font-weight: normal;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 310px) {
+  .page-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container-box {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+@media (max-width: 470px) {
+  .header-container {
+  }
+}
+
+@media (max-width: 790px) {
+  .game-card-container {
+    justify-content: center;
+  }
+  .header-container {
+    justify-content: space-around;
+  }
+  .header-container-box {
+    width: auto;
+    justify-content: space-around;
+  }
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .card {
+      background: transparent;
+    }
+    .card:hover .card-logo {
+      border: 1px solid var(--grey);
+      border-radius: 25%;
+    }
+    .card:hover {
+      transform: none;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -o-transform: none;
+      -ms-transform: none;
+    }
+    .card:hover .card-logo {
+      transform: none;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -o-transform: none;
+      -ms-transform: none;
+    }
+  }
+}
