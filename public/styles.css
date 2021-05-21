@@ -112,7 +112,6 @@ body {
   margin-top: 20px;
   border: 1px solid var(--grey);
   text-align: center;
-  font-weight: ;
 }
 
 .user-input::placeholder {
