@@ -1,1 +1,2 @@
-### This is super simple web memory cards game on JavaScript with custom design for a certain reason.
+### Simple memory card game on JavaScript and Firebase database and authentification with custom design for a certain reason.
+DEMO https://memory-game-workua.firebaseapp.com/
