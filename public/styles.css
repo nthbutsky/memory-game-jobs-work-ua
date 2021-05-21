@@ -112,10 +112,12 @@ body {
   margin-top: 20px;
   border: 1px solid var(--grey);
   text-align: center;
+  font-weight: ;
 }
 
 .user-input::placeholder {
   color: var(--grey);
+  font-weight: normal;
 }
 
 .user-input:focus {
@@ -244,7 +246,6 @@ body {
   position: relative;
   height: 150px;
   width: 150px;
-  background: var(--white);
   display: flex;
   display: -webkit-flex;
   align-items: center;
@@ -266,14 +267,6 @@ body {
   -o-transition: transform 0.5s;
   -ms-transition: transform 0.5s;
   cursor: pointer;
-}
-
-.card:hover {
-  transform: scale(0.95);
-  -webkit-transform: scale(0.95);
-  -moz-transform: scale(0.95);
-  -o-transform: scale(0.95);
-  -ms-transform: scale(0.95);
 }
 
 .card.card-flip {
@@ -316,14 +309,6 @@ body {
   -ms-transition: transform 250ms ease-in-out;
 }
 
-.card:hover .card-logo {
-  transform: scale(1.8);
-  -webkit-transform: scale(1.8);
-  -moz-transform: scale(1.8);
-  -o-transform: scale(1.8);
-  -ms-transform: scale(1.8);
-}
-
 .card-back.card-logo-flip {
   display: none;
   -webkit-display: none;
@@ -334,6 +319,22 @@ body {
   width: 100%;
   border-radius: 10px;
 }
+
+/* .card:hover .card-logo {
+  transform: scale(1.8);
+  -webkit-transform: scale(1.8);
+  -moz-transform: scale(1.8);
+  -o-transform: scale(1.8);
+  -ms-transform: scale(1.8);
+}
+
+.card:hover {
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+} */
 
 .home-link {
   margin-top: 20px;
@@ -385,24 +386,6 @@ body {
   @supports (-webkit-appearance: none) {
     .card {
       background: transparent;
-    }
-    .card:hover .card-logo {
-      border: 1px solid var(--grey);
-      border-radius: 25%;
-    }
-    .card:hover {
-      transform: none;
-      -webkit-transform: none;
-      -moz-transform: none;
-      -o-transform: none;
-      -ms-transform: none;
-    }
-    .card:hover .card-logo {
-      transform: none;
-      -webkit-transform: none;
-      -moz-transform: none;
-      -o-transform: none;
-      -ms-transform: none;
     }
   }
 }
