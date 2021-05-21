@@ -100,6 +100,13 @@ const sendVerificationCode = () => {
     });
 };
 
+function pressEnterKeyForLogin(event) {
+  let x = event.keyCode;
+  if (x == 13) {
+    signInWithPhone();
+  }
+}
+
 const signInWithPhone = (sentCodeId) => {
   const code = codeField.value;
   // A credential object (contains user's data) is created after a comparison between the 6 digit code sent to the user's phone
@@ -122,3 +129,10 @@ const signInWithPhone = (sentCodeId) => {
 };
 
 getCodeButton.addEventListener("click", sendVerificationCode);
+
+function pressEnterKeyForCode(event) {
+  let x = event.keyCode;
+  if (x == 13) {
+    sendVerificationCode();
+  }
+}

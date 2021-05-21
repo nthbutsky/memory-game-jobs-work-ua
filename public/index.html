@@ -13,20 +13,24 @@
     <div id="overlay-start-form">
       <div class="welcome-text" id="signed-in-text"> Будь ласка, авторизуйтеся, щоб почати гру!</div>
       <span id="sms-sent-info"></span>
+      <span id="phone-hint">Формат номеру телефона +38xxxxxxxxxx</span>
       <input 
         type="text" 
         class="user-input" 
         id="user-phone" 
-        placeholder="Номер телефону у форматі +38xxxxxxxxxx"/>
+        onkeydown="pressEnterKeyForCode(event)"
+        placeholder="Ваш номер телефону +38xxxxxxxxxx"/>
       <button 
         class="submit-btn" 
         id="get-code" 
         type="submit">Отримати пароль
       </button>
+      <span id="code-hint">Формат паролю хххххх</span>
       <input 
         type="text" 
         class="user-input" 
-        id="user-code" 
+        id="user-code"
+        onkeydown="pressEnterKeyForLogin(event)"
         placeholder="Пароль із смс"/>
       <button 
         class="submit-btn" 
@@ -38,10 +42,8 @@
     </div>
     </div>
     <div class="overlay-end-game-container">
-      <div class="overlay-end-game-text">
-        Ваш результат 
-        <span id="time-result"></span>
-      </div>
+      <div class="overlay-end-game-text">Ваш результат <span id="time-result"></span>
+    </div>
     </div>
     <div class="header-container">
       <div class="header-container-box">
@@ -51,6 +53,11 @@
           alt="Work.ua Logo"
         />
         <h1 class="page-title">ТИ ЗМОЖЕШ ВСЕ</h1>
+      </div>
+    </div>
+    <div class="game-info-container">
+      <div class="game-info">
+        Збери 10 пар професій швидше за всіх та отримай приз! Починаємо!
       </div>
     </div>
     <div class="game-container">

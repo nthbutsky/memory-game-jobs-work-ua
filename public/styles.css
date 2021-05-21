@@ -33,9 +33,16 @@ body {
 }
 
 #sms-sent-info {
-  font-size: 1rem;
+  font-size: 18px;
   color: var(--magenta);
   margin-top: 10px;
+}
+
+#phone-hint,
+#code-hint {
+  font-size: 14px;
+  color: var(--yellow);
+  line-height: 2;
 }
 
 .overlay-start-form-container {
@@ -109,7 +116,6 @@ body {
   width: 100%;
   background: var(--white);
   border: transparent;
-  margin-top: 20px;
   border: 1px solid var(--grey);
   text-align: center;
 }
@@ -225,6 +231,7 @@ body {
 .game-info {
   padding: 10px;
   border-top: 5px solid var(--magenta);
+  text-align: -webkit-center;
 }
 
 .game-card-container {
