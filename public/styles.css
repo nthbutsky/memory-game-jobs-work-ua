@@ -65,7 +65,7 @@ body {
 .overlay-start-form-container.visible {
   display: flex;
   display: -webkit-flex;
-  animation: overlay-grow 500ms forwards;
+  animation: overlay-grow 250ms forwards;
   background: var(--white);
 }
 
@@ -276,11 +276,11 @@ body {
 }
 
 .card.card-flip {
-  transition: transform 500ms ease-in-out;
-  -webkit-transition: transform 500ms ease-in-out;
-  -moz-transition: transform 500ms ease-in-out;
-  -o-transition: transform 500ms ease-in-out;
-  -ms-transition: transform 500ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  -webkit-transition: transform 250ms ease-in-out;
+  -moz-transition: transform 250ms ease-in-out;
+  -o-transition: transform 250ms ease-in-out;
+  -ms-transition: transform 250ms ease-in-out;
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
