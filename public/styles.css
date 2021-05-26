@@ -1,4 +1,5 @@
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -25,7 +26,7 @@ body {
 #phone-hint,
 #code-hint {
   font-size: 14px;
-  color: #ff9500;
+  color: #2c3f52;
   line-height: 2;
 }
 
@@ -36,8 +37,14 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   z-index: 100;
   color: #2c3f52;
@@ -47,21 +54,33 @@ body {
 }
 
 .overlay-start-form-container.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
+  -webkit-animation: overlay-grow 250ms forwards;
   animation: overlay-grow 250ms forwards;
   background: #fff;
 }
 
 #overlay-start-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   margin-top: 40px;
   background: #f4f5f6;
@@ -77,15 +96,24 @@ body {
 }
 
 .welcome-text {
-  border-top: 10px solid #e42469;
   color: #2c3f52;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   text-align: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
 
   padding: 15px;
@@ -102,6 +130,26 @@ body {
   border: transparent;
   border: 1px solid #d0d1d2;
   text-align: center;
+}
+
+.user-input::-webkit-input-placeholder {
+  color: #d0d1d2;
+  font-weight: normal;
+}
+
+.user-input::-moz-placeholder {
+  color: #d0d1d2;
+  font-weight: normal;
+}
+
+.user-input:-ms-input-placeholder {
+  color: #d0d1d2;
+  font-weight: normal;
+}
+
+.user-input::-ms-input-placeholder {
+  color: #d0d1d2;
+  font-weight: normal;
 }
 
 .user-input::placeholder {
@@ -138,7 +186,11 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   z-index: 100;
   background: #fff;
@@ -156,11 +208,20 @@ body {
 }
 
 .overlay-end-game-container.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
   background-color: #f4f5f6;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -172,13 +233,19 @@ body {
 .header-container {
   width: 100%;
   background: -webkit-linear-gradient(-72deg, #00b0f3 27%, #008cec 50%) #00a1f1;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 50px 0 10px 0;
   margin-bottom: 10px;
 }
 
 .header-container-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 790px;
   margin: auto;
@@ -201,27 +268,35 @@ body {
 }
 
 .game-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   padding-bottom: 5px;
   color: #2c3f52;
   font-weight: bold;
-  margin-top: 10px;
 }
 
 .game-info {
   padding: 10px;
-  border-top: 5px solid #e42469;
   text-align: -webkit-center;
 }
 
 .game-card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 10px;
   margin: auto;
@@ -236,12 +311,21 @@ body {
   position: relative;
   height: 150px;
   width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   display: -webkit-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   border-radius: 10px;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: -webkit-transform 100ms ease-in-out;
   transition: transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out, -webkit-transform 100ms ease-in-out;
   -webkit-transition: transform 100ms ease-in-out;
   -moz-transition: transform 100ms ease-in-out;
   -o-transition: transform 100ms ease-in-out;
@@ -251,7 +335,10 @@ body {
   -moz-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
   -webkit-transition: transform 0.5s;
   -moz-transition: transform 0.5s;
   -o-transition: transform 0.5s;
@@ -260,7 +347,10 @@ body {
 }
 
 .card.card-flip {
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
   -webkit-transition: transform 250ms ease-in-out;
   -moz-transition: transform 250ms ease-in-out;
   -o-transition: transform 250ms ease-in-out;
@@ -292,7 +382,10 @@ body {
 .card-logo {
   height: 75px;
   width: 75px;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
   -webkit-transition: transform 250ms ease-in-out;
   -moz-transition: transform 250ms ease-in-out;
   -o-transition: transform 250ms ease-in-out;
@@ -348,26 +441,39 @@ body {
 
 @media (max-width: 480px) {
   .header-container-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
   }
-}
-
-@media (max-width: 470px) {
-  .header-container {
+  .card {
+    height: 75px;
+    width: 75px;
+  }
+  .card-front {
+    height: 75px;
+    width: 75px;
   }
 }
 
 @media (max-width: 790px) {
   .game-card-container {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
   .header-container {
+    -ms-flex-pack: distribute;
     justify-content: space-around;
   }
   .header-container-box {
     width: auto;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
   }
 }
