@@ -1,6 +1,8 @@
 //The app uses firebase
+const apiKey = config.apiKey;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCQRAEbsVC4_osIpjon_DSAMOU6cMoFVnA",
+  apiKey: apiKey,
   authDomain: "memory-game-workua.firebaseapp.com",
   projectId: "memory-game-workua",
   storageBucket: "memory-game-workua.appspot.com",
@@ -20,29 +22,6 @@ const codeField = document.getElementById("user-code");
 const getCodeButton = document.getElementById("get-code");
 const signInWithPhoneButton = document.getElementById("submit");
 const smsSentInfo = document.getElementById("sms-sent-info");
-
-// // Turn off phone auth app verification.
-// firebase.auth().settings.appVerificationDisabledForTesting = true;
-
-// var phoneNumber = "+380955651951";
-// var testVerificationCode = "123456";
-
-// // This will render a fake reCAPTCHA as appVerificationDisabledForTesting is true.
-// // This will resolve after rendering without app verification.
-// var appVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container");
-// // signInWithPhoneNumber will call appVerifier.verify() which will resolve with a fake
-// // reCAPTCHA response.
-// firebase
-//   .auth()
-//   .signInWithPhoneNumber(phoneNumber, appVerifier)
-//   .then(function (confirmationResult) {
-//     // confirmationResult can resolve with the fictional testVerificationCode above.
-//     return confirmationResult.confirm(testVerificationCode);
-//   })
-//   .catch(function (error) {
-//     // Error; SMS not sent
-//     // ...
-//   });
 
 // Creates and render the captcha
 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
